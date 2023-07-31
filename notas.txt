@@ -5,3 +5,6 @@
     php artisan lang:publish
 //api Resources 
     php artisan make:resource UsuarioResource
+//laravel sanctum
+    composer require laravel/sanctum
+    php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
