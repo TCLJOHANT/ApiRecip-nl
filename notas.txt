@@ -1,0 +1,7 @@
+//El archivo  handler.php  se utiliza para manejar excepciones y errores que ocurren durante 
+//la ejecución de la aplicación, se encuentra en la carpeta  app/Exceptions .
+
+//generar carpeta de lenguaje
+    php artisan lang:publish
+//api Resources 
+    php artisan make:resource UsuarioResource
