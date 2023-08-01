@@ -13,7 +13,7 @@ class UsuarioController extends Controller
     //get-leer-read
     public function index()
     {
-        return UsuarioResource::collection(Usuario::all());
+        return UsuarioResource::collection(Usuario::paginate(2));
     }
     //post-crear-create
     public function store(GuardarUsuarioRequest $request)
