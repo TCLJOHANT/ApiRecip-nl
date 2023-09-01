@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Receta;
-use Illuminate\Http\Request;
+use App\Models\Recipe;
+use App\Http\Requests\StoreRecipeRequest;
+use App\Http\Requests\UpdateRecipeRequest;
 
-class RecetaController extends Controller
+class RecipeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +27,7 @@ class RecetaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRecipeRequest $request)
     {
         //
     }
@@ -34,7 +35,7 @@ class RecetaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Receta $receta)
+    public function show(Recipe $recipes)
     {
         //
     }
@@ -42,7 +43,7 @@ class RecetaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Receta $receta)
+    public function edit(Recipe $recipes)
     {
         //
     }
@@ -50,7 +51,7 @@ class RecetaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Receta $receta)
+    public function update(UpdateRecipeRequest $request, Recipe $recipes)
     {
         //
     }
@@ -58,7 +59,7 @@ class RecetaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Receta $receta)
+    public function destroy(Recipe $recipes)
     {
         //
     }

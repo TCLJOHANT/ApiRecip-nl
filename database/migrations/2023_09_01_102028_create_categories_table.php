@@ -11,17 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('recetas', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->String('titulo');
-            $table->string('categoria');
-            $table->text('ingredientes');
-            $table->text('preparacion');
-            $table->text('descripcion');
-            $table->integer('numComentarios');
-            $table->unsignedBigInteger('user_id');
+            $table->string('name',45);
             $table->timestamps();
-
         });
     }
 
@@ -30,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('recetas');
+        Schema::dropIfExists('categories');
     }
 };
