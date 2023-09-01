@@ -6,22 +6,22 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProfileSeeder extends Seeder
+class RecipeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('profiles')->insert([
+        DB::table('recipes')->insert([
             [
-	        	'profile_photo' => 'http://fotoProfile.png',
-	        	'cover_photo' => 'http://fotocover.png',
-	        	'description' =>  'tcljohant',
-                'user_id' =>1,
+	        	'title' => 'tarta de manzana',
+	        	'description' => 'cualquier cosa receta chingona',
+	        	'duration' => '08:30:00',
+	        	'user_id' =>1,
+	        	'category_id' =>1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
-
             ]
         ]);
     }

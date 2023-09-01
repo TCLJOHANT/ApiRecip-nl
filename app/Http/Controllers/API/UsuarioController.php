@@ -11,9 +11,9 @@ use Illuminate\Http\Request;
 class UsuarioController extends Controller
 {
     //get-leer-read
-    public function index()
+    public function index(Request $request)
     {
-        return UsuarioResource::collection(Usuario::paginate(2));
+        // return UsuarioResource::collection(Usuario::paginate(2));
     }
     //post-crear-create
     public function store(GuardarUsuarioRequest $request)

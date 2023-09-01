@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description',1000);
             $table->time('duration');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
             $table->timestamps();

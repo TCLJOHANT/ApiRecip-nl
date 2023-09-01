@@ -23,8 +23,8 @@ class UsuarioResource extends JsonResource
             'genero' => $this->genero,
             'contraseña' => $this->contraseña,
             //se puede mostrar created_at y updated _at a pesar que en modelo no lo permito.
-            'fecha_creacion' => $this->created_at->format('d-m-Y'),
-            'fecha_actualizacion' => $this->updated_at->format('d-m-Y')
+            // 'fecha_creacion' => $this->created_at->format('d-m-Y'),
+            // 'fecha_actualizacion' => $this->updated_at->format('d-m-Y')
         ];
 
     }

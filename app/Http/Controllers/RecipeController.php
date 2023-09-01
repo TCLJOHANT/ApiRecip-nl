@@ -5,25 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Recipe;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
-
+use Illuminate\Http\Request;
 class RecipeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        // $data = $request->all();
+        // $relations = $data['relations'];
+        // $receta = Recipe::with($relations)->get();
+        // return response()->json($receta);
+        // return Recipe::all()->category();
+    $recipe = Recipe::with('user','category')->get()->paginate(15);
+    return response()->json($recipe);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -36,14 +33,6 @@ class RecipeController extends Controller
      * Display the specified resource.
      */
     public function show(Recipe $recipes)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Recipe $recipes)
     {
         //
     }

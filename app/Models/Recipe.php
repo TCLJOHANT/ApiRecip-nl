@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Recipe extends Model
 {
     use HasFactory;
+     //campos que quiero proteger  especificar qué campos no pueden asignar masivamente.
+   protected $guarded = ['id'];
     //relacion uno a muchos inversa
     public function user(){
         return $this->BelongsTo(User::class);

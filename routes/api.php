@@ -1,7 +1,8 @@
 <?php
-
 use App\Http\Controllers\API\UsuarioController;
 use App\Http\Controllers\API\AutenticarController;
+use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +25,10 @@ Route::post('registro',[AutenticarController::class,'registro']);
 Route::post('acceso',[AutenticarController::class,'acceso']);
 Route::group(['middleware'=>['auth:sanctum']], function(){
     
-    Route::apiResource('usuarios', UsuarioController::class);
+    // Route::apiResource('usuarios', UsuarioController::class);
     Route::post('cerrarsesion',[AutenticarController::class,'cerrarSesion']);
 
 });
+Route::apiResource('usuarios', UsuarioController::class);
+Route::apiResource('recipes',RecipeController::class);
+Route::apiResource('users',UserController::class);
